@@ -1,6 +1,3 @@
-install: lein protobuf install
-
-
 addons:
   apt:
     packages:
@@ -9,7 +6,7 @@ addons:
 
 language: clojure
 
-lein: 2.7.1
+#lein: 2.7.1
 
 os:
 - linux
