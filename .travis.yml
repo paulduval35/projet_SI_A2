@@ -1,6 +1,15 @@
+install: lein protobuf install
+
+
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+
+
 language: clojure
 
 lein: 2.7.1
 
 os:
-- osx
+- linux
