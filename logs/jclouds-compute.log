@@ -1,0 +1,331 @@
+2019-05-19 19:03:44,569 WARN [operate-15] j.compute [SLF4JLogger.java:77] to avoid creating temporary keys in aws-ec2, use templateOption overrideLoginCredentialWith(id_rsa)
+2019-05-19 19:04:47,649 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 1 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:04:56,901 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 2 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:04:58,918 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 3 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:02,124 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 4 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:05,306 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 5 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:12,035 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 6 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:17,773 ERROR [user thread 0] j.ssh [SLF4JLogger.java:96] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+java.lang.IllegalStateException: Invalid packet: indicated length 1349281121 too large
+	at net.schmizz.sshj.sftp.PacketReader.getPacketLength(PacketReader.java:65) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.PacketReader.readPacket(PacketReader.java:73) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.SFTPEngine.init(SFTPEngine.java:77) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.SSHClient.newSFTPClient(SSHClient.java:623) ~[sshj-0.8.1.jar:na]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:249) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:232) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:312) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:290) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:346) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:172) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.doCall(RunScriptOnNodeAsInitScriptUsingSsh.java:108) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.future(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:68) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.doCall(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:60) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.call(RunScriptOnNodeAsInitScriptUsingSsh.java:77) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:125) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:53) [jclouds-compute-1.7.2.jar:1.7.2]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_201]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_201]
+2019-05-19 19:05:17,773 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring Put(path=[/tmp/init-bootstrap]) (attempt 1 of 7): (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:20,166 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 1 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:21,524 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 2 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:23,537 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 3 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:26,648 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 4 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:29,814 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 5 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:32,981 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 6 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:36,149 ERROR [user thread 0] j.ssh [SLF4JLogger.java:96] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+java.lang.IllegalStateException: Invalid packet: indicated length 1349281121 too large
+	at net.schmizz.sshj.sftp.PacketReader.getPacketLength(PacketReader.java:65) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.PacketReader.readPacket(PacketReader.java:73) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.SFTPEngine.init(SFTPEngine.java:77) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.SSHClient.newSFTPClient(SSHClient.java:623) ~[sshj-0.8.1.jar:na]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:249) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:232) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:312) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:290) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:346) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:172) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.doCall(RunScriptOnNodeAsInitScriptUsingSsh.java:108) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.future(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:68) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.doCall(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:60) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.call(RunScriptOnNodeAsInitScriptUsingSsh.java:77) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:125) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:53) [jclouds-compute-1.7.2.jar:1.7.2]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_201]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_201]
+2019-05-19 19:05:36,149 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring Put(path=[/tmp/init-bootstrap]) (attempt 2 of 7): (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:38,232 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 1 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:39,936 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 2 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:42,331 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 3 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:45,664 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 4 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:48,798 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 5 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:51,947 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 6 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:55,616 ERROR [user thread 0] j.ssh [SLF4JLogger.java:96] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+java.lang.IllegalStateException: Invalid packet: indicated length 1349281121 too large
+	at net.schmizz.sshj.sftp.PacketReader.getPacketLength(PacketReader.java:65) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.PacketReader.readPacket(PacketReader.java:73) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.SFTPEngine.init(SFTPEngine.java:77) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.SSHClient.newSFTPClient(SSHClient.java:623) ~[sshj-0.8.1.jar:na]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:249) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:232) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:312) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:290) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:346) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:172) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.doCall(RunScriptOnNodeAsInitScriptUsingSsh.java:108) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.future(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:68) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.doCall(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:60) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.call(RunScriptOnNodeAsInitScriptUsingSsh.java:77) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:125) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:53) [jclouds-compute-1.7.2.jar:1.7.2]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_201]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_201]
+2019-05-19 19:05:55,616 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring Put(path=[/tmp/init-bootstrap]) (attempt 3 of 7): (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:58,635 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 1 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:05:59,962 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 2 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:01,966 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 3 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:04,969 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 4 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:08,095 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 5 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:11,281 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 6 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:14,440 ERROR [user thread 0] j.ssh [SLF4JLogger.java:96] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+java.lang.IllegalStateException: Invalid packet: indicated length 1349281121 too large
+	at net.schmizz.sshj.sftp.PacketReader.getPacketLength(PacketReader.java:65) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.PacketReader.readPacket(PacketReader.java:73) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.SFTPEngine.init(SFTPEngine.java:77) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.SSHClient.newSFTPClient(SSHClient.java:623) ~[sshj-0.8.1.jar:na]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:249) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:232) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:312) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:290) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:346) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:172) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.doCall(RunScriptOnNodeAsInitScriptUsingSsh.java:108) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.future(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:68) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.doCall(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:60) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.call(RunScriptOnNodeAsInitScriptUsingSsh.java:77) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:125) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:53) [jclouds-compute-1.7.2.jar:1.7.2]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_201]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_201]
+2019-05-19 19:06:14,440 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring Put(path=[/tmp/init-bootstrap]) (attempt 4 of 7): (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:17,565 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 1 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:18,901 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 2 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:20,919 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 3 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:23,999 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 4 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:27,123 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 5 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:30,387 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 6 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:33,531 ERROR [user thread 0] j.ssh [SLF4JLogger.java:96] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+java.lang.IllegalStateException: Invalid packet: indicated length 1349281121 too large
+	at net.schmizz.sshj.sftp.PacketReader.getPacketLength(PacketReader.java:65) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.PacketReader.readPacket(PacketReader.java:73) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.SFTPEngine.init(SFTPEngine.java:77) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.SSHClient.newSFTPClient(SSHClient.java:623) ~[sshj-0.8.1.jar:na]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:249) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:232) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:312) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:290) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:346) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:172) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.doCall(RunScriptOnNodeAsInitScriptUsingSsh.java:108) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.future(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:68) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.doCall(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:60) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.call(RunScriptOnNodeAsInitScriptUsingSsh.java:77) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:125) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:53) [jclouds-compute-1.7.2.jar:1.7.2]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_201]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_201]
+2019-05-19 19:06:33,531 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring Put(path=[/tmp/init-bootstrap]) (attempt 5 of 7): (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:36,690 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 1 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:38,046 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 2 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:40,087 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 3 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:43,342 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 4 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:47,069 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 5 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:50,231 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 6 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:53,378 ERROR [user thread 0] j.ssh [SLF4JLogger.java:96] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+java.lang.IllegalStateException: Invalid packet: indicated length 1349281121 too large
+	at net.schmizz.sshj.sftp.PacketReader.getPacketLength(PacketReader.java:65) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.PacketReader.readPacket(PacketReader.java:73) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.SFTPEngine.init(SFTPEngine.java:77) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.SSHClient.newSFTPClient(SSHClient.java:623) ~[sshj-0.8.1.jar:na]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:249) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:232) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:312) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:290) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:346) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:172) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.doCall(RunScriptOnNodeAsInitScriptUsingSsh.java:108) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.future(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:68) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.doCall(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:60) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.call(RunScriptOnNodeAsInitScriptUsingSsh.java:77) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:125) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:53) [jclouds-compute-1.7.2.jar:1.7.2]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_201]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_201]
+2019-05-19 19:06:53,378 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring Put(path=[/tmp/init-bootstrap]) (attempt 6 of 7): (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:56,578 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 1 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:06:58,172 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 2 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:07:49,425 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 3 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:07:52,590 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 4 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:07:55,752 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 5 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:07:59,025 INFO [user thread 0] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (attempt 6 of 7): Invalid packet: indicated length 1349281121 too large
+2019-05-19 19:08:02,241 ERROR [user thread 0] j.ssh [SLF4JLogger.java:96] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+java.lang.IllegalStateException: Invalid packet: indicated length 1349281121 too large
+	at net.schmizz.sshj.sftp.PacketReader.getPacketLength(PacketReader.java:65) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.PacketReader.readPacket(PacketReader.java:73) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.SFTPEngine.init(SFTPEngine.java:77) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.SSHClient.newSFTPClient(SSHClient.java:623) ~[sshj-0.8.1.jar:na]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:249) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:232) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:312) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:290) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:346) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:172) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.doCall(RunScriptOnNodeAsInitScriptUsingSsh.java:108) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.future(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:68) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.doCall(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:60) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.call(RunScriptOnNodeAsInitScriptUsingSsh.java:77) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:125) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:53) [jclouds-compute-1.7.2.jar:1.7.2]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_201]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_201]
+2019-05-19 19:08:02,244 ERROR [user thread 0] j.ssh [SLF4JLogger.java:96] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring Put(path=[/tmp/init-bootstrap]) (out of retries - max 7): (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+org.jclouds.ssh.SshException: (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring SFTPClient() (out of retries - max 7): Invalid packet: indicated length 1349281121 too large
+	at org.jclouds.sshj.SshjSshClient.propagate(SshjSshClient.java:386) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:206) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:312) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$PutConnection.create(SshjSshClient.java:290) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:346) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.put(SshjSshClient.java:172) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.doCall(RunScriptOnNodeAsInitScriptUsingSsh.java:108) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.future(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:68) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.doCall(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:60) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.call(RunScriptOnNodeAsInitScriptUsingSsh.java:77) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:125) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:53) [jclouds-compute-1.7.2.jar:1.7.2]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_201]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_201]
+Caused by: java.lang.IllegalStateException: Invalid packet: indicated length 1349281121 too large
+	at net.schmizz.sshj.sftp.PacketReader.getPacketLength(PacketReader.java:65) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.PacketReader.readPacket(PacketReader.java:73) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.sftp.SFTPEngine.init(SFTPEngine.java:77) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.SSHClient.newSFTPClient(SSHClient.java:623) ~[sshj-0.8.1.jar:na]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:249) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient$1.create(SshjSshClient.java:232) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	... 15 common frames omitted
+2019-05-19 19:14:56,967 INFO [user thread 3] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring ExecResponse(command=[/tmp/init-bootstrap stdout]) (attempt 1 of 7): Broken transport; encountered EOF
+2019-05-19 19:15:15,778 INFO [user thread 3] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring {hostAndPort=3.91.223.76:22, loginUser=root, ssh=null, connectTimeout=60000, sessionTimeout=60000} (attempt 1 of 7): Connection timed out: connect
+2019-05-19 19:15:36,997 INFO [user thread 3] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring {hostAndPort=3.91.223.76:22, loginUser=root, ssh=null, connectTimeout=60000, sessionTimeout=60000} (attempt 2 of 7): Connection timed out: connect
+2019-05-19 19:15:58,847 INFO [user thread 3] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring {hostAndPort=3.91.223.76:22, loginUser=root, ssh=null, connectTimeout=60000, sessionTimeout=60000} (attempt 3 of 7): Connection timed out: connect
+2019-05-19 19:16:21,824 INFO [user thread 3] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring {hostAndPort=3.91.223.76:22, loginUser=root, ssh=null, connectTimeout=60000, sessionTimeout=60000} (attempt 4 of 7): Connection timed out: connect
+2019-05-19 19:16:44,827 INFO [user thread 3] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring {hostAndPort=3.91.223.76:22, loginUser=root, ssh=null, connectTimeout=60000, sessionTimeout=60000} (attempt 5 of 7): Connection timed out: connect
+2019-05-19 19:16:48,330 WARN [operate-15] j.compute [SLF4JLogger.java:77] to avoid creating temporary keys in aws-ec2, use templateOption overrideLoginCredentialWith(id_rsa)
+2019-05-19 19:17:07,829 INFO [user thread 3] j.ssh [SLF4JLogger.java:68] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring {hostAndPort=3.91.223.76:22, loginUser=root, ssh=null, connectTimeout=60000, sessionTimeout=60000} (attempt 6 of 7): Connection timed out: connect
+2019-05-19 19:17:30,832 ERROR [user thread 3] j.ssh [SLF4JLogger.java:96] << (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring {hostAndPort=3.91.223.76:22, loginUser=root, ssh=null, connectTimeout=60000, sessionTimeout=60000} (out of retries - max 7): Connection timed out: connect
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_201]
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_201]
+	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_201]
+	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_201]
+	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_201]
+	at net.schmizz.sshj.SocketClient.connect(SocketClient.java:70) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.SocketClient.connect(SocketClient.java:77) ~[sshj-0.8.1.jar:na]
+	at org.jclouds.sshj.SSHClientConnection.create(SSHClientConnection.java:159) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SSHClientConnection.create(SSHClientConnection.java:49) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.connect(SshjSshClient.java:226) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:213) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.exec(SshjSshClient.java:468) [jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.SudoAwareInitManager.runCommand(SudoAwareInitManager.java:108) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.SudoAwareInitManager.runAction(SudoAwareInitManager.java:90) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.BlockUntilInitScriptStatusIsZeroThenReturnOutput.run(BlockUntilInitScriptStatusIsZeroThenReturnOutput.java:138) [jclouds-compute-1.7.2.jar:1.7.2]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_201]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_201]
+2019-05-19 19:17:30,833 ERROR [user thread 0] j.compute [SLF4JLogger.java:96] << problem customizing node(us-east-1/i-011d5db05d3509f59): 
+java.lang.RuntimeException: java.util.concurrent.ExecutionException: org.jclouds.ssh.SshException: (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring {hostAndPort=3.91.223.76:22, loginUser=root, ssh=null, connectTimeout=60000, sessionTimeout=60000} (out of retries - max 7): Connection timed out: connect
+	at com.google.common.base.Throwables.propagate(Throwables.java:160) ~[guava-15.0.jar:na]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.doCall(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:63) ~[jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSsh.call(RunScriptOnNodeAsInitScriptUsingSsh.java:77) ~[jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:125) [jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.strategy.CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.call(CustomizeNodeAndAddToGoodMapOrPutExceptionIntoBadMap.java:53) [jclouds-compute-1.7.2.jar:1.7.2]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_201]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_201]
+Caused by: java.util.concurrent.ExecutionException: org.jclouds.ssh.SshException: (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring {hostAndPort=3.91.223.76:22, loginUser=root, ssh=null, connectTimeout=60000, sessionTimeout=60000} (out of retries - max 7): Connection timed out: connect
+	at com.google.common.util.concurrent.AbstractFuture$Sync.getValue(AbstractFuture.java:299) ~[guava-15.0.jar:na]
+	at com.google.common.util.concurrent.AbstractFuture$Sync.get(AbstractFuture.java:272) ~[guava-15.0.jar:na]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:96) ~[guava-15.0.jar:na]
+	at org.jclouds.compute.callables.BlockUntilInitScriptStatusIsZeroThenReturnOutput.get(BlockUntilInitScriptStatusIsZeroThenReturnOutput.java:194) ~[jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.doCall(RunScriptOnNodeAsInitScriptUsingSshAndBlockUntilComplete.java:60) ~[jclouds-compute-1.7.2.jar:1.7.2]
+	... 7 common frames omitted
+Caused by: org.jclouds.ssh.SshException: (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) (root:rsa[fingerprint(8c:b9:c3:89:63:ef:5c:5f:4f:c0:f8:fe:72:c5:45:51),sha1(04:76:ac:57:91:6e:c7:e8:5c:64:06:bc:90:74:93:4a:25:5f:cd:5a)]@3.91.223.76:22) error acquiring {hostAndPort=3.91.223.76:22, loginUser=root, ssh=null, connectTimeout=60000, sessionTimeout=60000} (out of retries - max 7): Connection timed out: connect
+	at org.jclouds.sshj.SshjSshClient.propagate(SshjSshClient.java:386) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:206) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.connect(SshjSshClient.java:226) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:213) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.exec(SshjSshClient.java:468) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.SudoAwareInitManager.runCommand(SudoAwareInitManager.java:108) ~[jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.SudoAwareInitManager.runAction(SudoAwareInitManager.java:90) ~[jclouds-compute-1.7.2.jar:1.7.2]
+	at org.jclouds.compute.callables.BlockUntilInitScriptStatusIsZeroThenReturnOutput.run(BlockUntilInitScriptStatusIsZeroThenReturnOutput.java:138) ~[jclouds-compute-1.7.2.jar:1.7.2]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:1.8.0_201]
+	... 4 common frames omitted
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[na:1.8.0_201]
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source) ~[na:1.8.0_201]
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_201]
+	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.8.0_201]
+	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.8.0_201]
+	at java.net.Socket.connect(Unknown Source) ~[na:1.8.0_201]
+	at net.schmizz.sshj.SocketClient.connect(SocketClient.java:70) ~[sshj-0.8.1.jar:na]
+	at net.schmizz.sshj.SocketClient.connect(SocketClient.java:77) ~[sshj-0.8.1.jar:na]
+	at org.jclouds.sshj.SSHClientConnection.create(SSHClientConnection.java:159) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SSHClientConnection.create(SSHClientConnection.java:49) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	at org.jclouds.sshj.SshjSshClient.acquire(SshjSshClient.java:196) ~[jclouds-sshj-1.7.2.jar:1.7.2]
+	... 11 common frames omitted
+2019-05-19 19:30:52,591 WARN [operate-14] j.compute [SLF4JLogger.java:77] to avoid creating temporary keys in aws-ec2, use templateOption overrideLoginCredentialWith(id_rsa)
+2019-05-19 20:18:19,408 WARN [operate-15] j.compute [SLF4JLogger.java:77] to avoid creating temporary keys in aws-ec2, use templateOption overrideLoginCredentialWith(id_rsa)
+2019-05-19 20:21:27,267 WARN [operate-15] j.compute [SLF4JLogger.java:77] to avoid creating temporary keys in aws-ec2, use templateOption overrideLoginCredentialWith(id_rsa)
+2019-05-19 21:16:56,860 WARN [operate-15] j.compute [SLF4JLogger.java:77] to avoid creating temporary keys in aws-ec2, use templateOption overrideLoginCredentialWith(id_rsa)
+2019-05-20 22:03:39,349 WARN [operate-15] j.compute [SLF4JLogger.java:77] to avoid creating temporary keys in aws-ec2, use templateOption overrideLoginCredentialWith(id_rsa)
+2019-05-20 22:30:24,358 WARN [operate-15] j.compute [SLF4JLogger.java:77] to avoid creating temporary keys in aws-ec2, use templateOption overrideLoginCredentialWith(id_rsa)
+2019-05-21 09:41:46,766 WARN [operate-15] j.compute [SLF4JLogger.java:77] to avoid creating temporary keys in aws-ec2, use templateOption overrideLoginCredentialWith(id_rsa)
+2019-05-21 11:40:09,208 WARN [operate-15] j.compute [SLF4JLogger.java:77] to avoid creating temporary keys in aws-ec2, use templateOption overrideLoginCredentialWith(id_rsa)

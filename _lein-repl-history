@@ -1,0 +1,223 @@
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+nil
+(def aws (pallet.configure/compute-service :aws))
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+nil
+(def aws (pallet.configure/compute-service :aws))
+#'user/aws
+(def my-group
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+                 :image {:os-family :ubuntu 
+                         :image-id "us-east-1/ami-3c994355"})))
+#'user/my-group
+!(def s (pallet.api/converge {my-group 1} :compute aws))
+(def s (pallet.api/converge {my-group 1} :compute aws))
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+nil
+(def s (pallet.api/converge {my-group 1} :compute aws))
+(def aws (pallet.configure/compute-service :aws))
+#'user/aws
+(def my-group
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+                 :image {:os-family :ubuntu 
+                         :image-id "us-east-1/ami-3c994355"})))
+#'user/my-group
+(def s (pallet.api/converge {my-group 1} :compute aws))
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+nil
+(def aws (pallet.configure/compute-service :aws))
+#'user/aws
+(def my-group
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+                 :image {:os-family :ubuntu 
+                         :image-id "us-east-1/ami-3c994355"})))
+#'user/my-group
+(def s (pallet.api/converge {my-group 1} :compute aws))
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+nil
+(def aws (pallet.configure/compute-service :aws))
+#'user/aws
+user=>
+(def my-group
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+                 :image {:os-family :ubuntu 
+                         :image-id "us-east-2/ami-3c994355"})))
+#'user/my-group
+(def s (pallet.api/converge {my-group 1} :compute aws))
+#'user/s
+user=>
+(def my-group
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+                 :image {:os-family :ubuntu 
+                         :image-id "us-east-1/ami-3c994355"})))
+#'user/my-group
+(def s (pallet.api/converge {my-group 1} :compute aws))
+#'user/s
+(use 'pallet.repl)
+nil
+(explain-session s)
+(def s (pallet.api/converge {my-group 0} :compute aws))
+#'user/s
+(explain-session s)
+(def s (pallet.api/converge {my-group 0} :compute aws))
+(explain-session s)
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+nil
+(def aws (pallet.configure/compute-service :aws))
+#'user/aws
+(def my-group
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+                 :image {:os-family :ubuntu 
+                         :image-id "us-east-1/ami-3c994355"})))
+#'user/my-group
+(def s (pallet.api/converge {my-group 1} :compute aws))
+#'user/s
+(use 'pallet.repl)
+nil
+(explain-session s)
+(def s (pallet.api/converge {my-group 0} :compute aws))
+#'user/s
+(explain-session s)
+(use '[pallet.crate.automated-admin-user :only [automated-admin-user]])
+nil
+(def my-group 
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+               :image {:os-family :ubuntu 
+                       :image-id "us-east-1/ami-3c994355"})
+    :phases {:bootstrap automated-admin-user}))
+(use '[pallet.crate.automated-admin-user :only [automated-admin-user]])
+nil
+(def my-group 
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+               :image {:os-family :ubuntu 
+                       :image-id "us-east-1/ami-3c994355"})
+    :phases {:bootstrap automated-admin-user}))
+#'user/my-group
+(def s (pallet.api/converge {my-group 1} :compute aws))
+#'user/s
+(def s (pallet.api/converge {my-group 1} :compute aws))
+(def aws (pallet.configure/compute-service :aws))
+#'user/aws
+(def s (pallet.api/converge {my-group 1} :compute aws))
+#'user/s
+(def s (pallet.api/converge {my-group 1} :compute aws))
+#'user/s
+(explain-session s)
+(use 'pallet.repl)
+nil
+(explain-session s)
+(def aws (pallet.configure/compute-service :aws))
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+nil
+(def aws (pallet.configure/compute-service :aws))
+#'user/aws
+(show-nodes aws)
+(use '[pallet.crate.automated-admin-user :only [automated-admin-user]])
+nil
+(def my-group 
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+               :image {:os-family :ubuntu 
+                       :image-id "us-east-1/ami-3c994355"})
+    :phases {:bootstrap automated-admin-user}))
+#'user/my-group
+(def s (pallet.api/converge {my-group 1} :compute aws))
+#'user/s
+(explain-session s)
+(show-nodes aws)
+(use 'pallet.repl)
+nil
+(show-nodes aws)
+(def aws (pallet.configure/compute-service :aws))
+#'user/aws
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+nil
+(def aws (pallet.configure/compute-service :aws))
+#'user/aws
+(def s (pallet.api/converge {my-group 1} :compute aws))
+#'user/s
+user=>
+(def my-group
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+                 :image {:os-family :ubuntu 
+                         :image-id "us-east-1/ami-3c994355"})))
+(def s (pallet.api/converge {my-group 1} :compute aws))
+(explain-session s)
+(use 'pallet.repl)
+nil
+(explain-session s)
+(use '[pallet.crate.automated-admin-user :only [automated-admin-user]])
+nil
+(def my-group 
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+               :image {:os-family :ubuntu 
+                       :image-id "us-east-1/ami-3c994355"})
+    :phases {:bootstrap automated-admin-user}))
+#'user/my-group
+(def s (pallet.api/converge {my-group 1} :compute aws))
+(explain-session s)
+(show-nodes aws)
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+user=> (def aws (pallet.configure/compute-service :aws))
+(def aws (pallet.configure/compute-service :aws))
+(def s (pallet.api/converge {my-group 1} :compute aws))
+user=> (use 'pallet.repl)
+(use 'pallet.repl)
+(def s (pallet.api/converge {my-group 1} :compute aws))
+(def my-group 
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+               :image {:os-family :ubuntu 
+                       :image-id "us-east-1/ami-3c994355"})
+    :phases {:bootstrap automated-admin-user}))
+(show-nodes aws)
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+nil
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+(def aws (pallet.configure/compute-service :aws))
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+(def aws (pallet.configure/compute-service :aws))
+(use '[pallet.crate.automated-admin-user :only [automated-admin-user]])
+nil
+(def my-group 
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+               :image {:os-family :ubuntu 
+                       :image-id "us-east-1/ami-3c994355"})
+    :phases {:bootstrap automated-admin-user}))
+(def s (pallet.api/converge {my-group 1} :compute aws))
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+nil
+(def aws (pallet.configure/compute-service :aws))
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+(def aws (pallet.configure/compute-service :aws))
+(use '[pallet.crate.automated-admin-user :only [automated-admin-user]])
+(def my-group 
+  (pallet.api/group-spec "mygroup"
+    :node-spec (pallet.api/node-spec
+               :image {:os-family :ubuntu 
+                       :image-id "us-east-1/ami-3c994355"})
+    :phases {:bootstrap automated-admin-user}))
+(def s (pallet.api/converge {my-group 1} :compute aws))
+(use 'pallet.repl)
+(explain-session s)
+(def s (pallet.api/converge {my-group 1} :compute aws))
+(require 'pallet.api 'pallet.compute 'pallet.configure)
+(def aws (pallet.configure/compute-service :aws))
+exec-script* "ls"
+pallet.actions.exec-script*
+lein -h
+-h
+help
+run
+start
