@@ -18,6 +18,8 @@
                   :exclusions [org.slf4j/slf4j-api]]
                  
                  [org.apache.jclouds.driver/jclouds-sshj "1.7.2"]
+                 :exclusions [net.shmizz/sshj]
+
                  [ch.qos.logback/logback-classic "1.0.9"]
 
 																	;; https://mvnrepository.com/artifact/org.apache.jclouds.provider/aws-ec2
