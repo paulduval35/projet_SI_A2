@@ -1,6 +1,6 @@
 (defproject quickstart "0.1.0-SNAPSHOT"
   :description "FIXME Pallet project for quickstart"
-  :dependencies [[org.clojure/clojure "1.4.0"]
+  :dependencies [[org.clojure/clojure "1.7.0"]
                  [com.palletops/pallet "0.8.0-RC.9"]
                  [com.palletops/pallet-jclouds "1.7.3"]
                  ;; To get started we include all jclouds compute providers.
@@ -20,8 +20,8 @@
                  [org.apache.jclouds.driver/jclouds-sshj "1.7.2"]
                  [ch.qos.logback/logback-classic "1.0.9"]
 
-																	;; https://mvnrepository.com/artifact/org.jclouds/jclouds-all
-																	[org.jclouds/jclouds-all "1.6.0"]]
+																	;; https://mvnrepository.com/artifact/org.apache.jclouds.provider/aws-ec2
+																	[org.apache.jclouds.provider/aws-ec2 "2.0.2"]]
                  
 
 
