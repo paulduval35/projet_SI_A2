@@ -1,4 +1,5 @@
-(defproject quickstart "0.1.0-SNAPSHOT"
+
+ (defproject quickstart "0.1.0-SNAPSHOT"
   :description "FIXME Pallet project for quickstart"
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [com.palletops/pallet "0.8.0-RC.9"]
@@ -17,12 +18,12 @@
 
                   :exclusions [org.slf4j/slf4j-api]]
                  
-                 [org.apache.jclouds.driver/jclouds-sshj "1.7.2"]
-                 :exclusions [net.shmizz/sshj]
+                 [org.apache.jclouds.driver/jclouds-sshj "1.7.2"
+                 :exclusions [net.shmizz/sshj]]
 
                  [ch.qos.logback/logback-classic "1.0.9"]
 
-																	;; https://mvnrepository.com/artifact/org.apache.jclouds.provider/aws-ec2
+																	;;https://mvnrepository.com/artifact/org.apache.jclouds.provider/aws-ec2
 																	[org.apache.jclouds.provider/aws-ec2 "2.0.2"]]
                  
 
