@@ -16,10 +16,7 @@
                  [org.apache.jclouds.driver/jclouds-sshj "1.7.2"]
                  [ch.qos.logback/logback-classic "1.0.9"]]
 
-                 ;; never do this
-																	(require 'cemerick.pomegranate.aether)
-																	(cemerick.pomegranate.aether/register-wagon-factory!
- 																"http" #(org.apache.maven.wagon.providers.http.HttpWagon.))
+                 
 
 
 
@@ -36,3 +33,10 @@
   :main ^:skip-aot quickstart.core
   :repositories
   {"sonatype" "https://oss.sonatype.org/content/repositories/releases/"})
+
+
+
+	;; never do this
+	(require 'cemerick.pomegranate.aether)
+	(cemerick.pomegranate.aether/register-wagon-factory!
+ "http" #(org.apache.maven.wagon.providers.http.HttpWagon.))
