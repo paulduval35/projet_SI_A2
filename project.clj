@@ -21,7 +21,7 @@
                  [ch.qos.logback/logback-classic "1.0.9"]
 
 																	;; https://mvnrepository.com/artifact/org.apache.jclouds.provider/aws-ec2
-																	[org.apache.jclouds.provider/aws-ec2 "2.0.2"]]
+																	[org.apache.jclouds/aws-ec2 "2.0.2"]]
                  
 
 
