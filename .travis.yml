@@ -1,4 +1,4 @@
-dist: xenial
+dist: trusty
 language: clojure
 lein: 2.7.1
 addons:
