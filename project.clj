@@ -14,16 +14,14 @@
 
 
 
-																	;; https://mvnrepository.com/artifact/org.jclouds/jclouds-all
-																	[org.jclouds/jclouds-all "1.6.0"]
-
 
                   :exclusions [org.slf4j/slf4j-api]]
                  
                  [org.apache.jclouds.driver/jclouds-sshj "1.7.2"]
-                 [ch.qos.logback/logback-classic "1.0.9"]]
+                 [ch.qos.logback/logback-classic "1.0.9"]
 
-
+																	;; https://mvnrepository.com/artifact/org.jclouds/jclouds-all
+																	[org.jclouds/jclouds-all "1.6.0"]]
                  
 
 
