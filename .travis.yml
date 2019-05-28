@@ -1,0 +1,22 @@
+dist: trusty
+language: clojure
+lein: 2.7.1
+addons:
+  apt:
+   packages:
+    - openjdk-8-jre
+os:
+- linux
+env:
+  global:
+  - secure: xSdvUZlItzaRidhXsKAzLZbjIFytVIpTJOUvjYsaq1Bz7HFzn+TzzLFhNhjjQOSolJ31vHYdeAW5pwSh2EvvsQEAed0b8JacmbX6BRykGzzA+hSfQUFD7W1mZ4Ftnhb82Ou37P8VIdczexoyEz9AMXfPlZzdBwUjDCk72rj4WkSQ/1cmDPGi4DbE7p64Sw92dyzfmdzJEtcp1fTBDYQxhAQoGAQz3ACqRxANzllRfoArg5keYmEc+a7D8sZ0REPTcqDiWwuxsHo7vprc6mHJdAS2Fd5CnKkX/JSBUDIc+5NsZVdCiN8I9TuHOLjBgebX9+WPpDaX9NUY15T7bC9n9dJ4wNlZ2WdV0Fe/l2J4cNaDsB+MaHGTXHelItfTdM36X2GpzGU6OI9/sgT9Bl51O1GBmz/TBwcAVP6OE8upDrbaN/lNiiNPWQlNVEZpoUPqdx9zzK1GbGS3dwNm8h6EETY6He53chnMGMh45nlIS0AyECP3HwJrjLJZH84ESroYpPsCND5iyH1kfWMsVbUyej3V8+wF/0PcuF+YWDvUEfrazr4nLYpJfdQb3UzQMfIWDrNPn9nDsRO53VtS4jCOzWhM6tcuZSLtb6SnJzu0lKZzAUfOZCUO70QaIP2Zs8c5iMX+JFvugx/4va0Fu/8dQppu9CMD85EhCorCepYslvw=
+  - secure: cc9JDLKIl9GngguJKwbBPG1DfCR9b7Ph7OmgjU34Ml/3rUXaClYp0WP5ULT9vaFWR7ejXFlpfDuVnsOHv2xnEySwvc6TG2+jG3RWSbTA1iNlSotU1c+Wmo6bBNKNS21R7XnvxDHmNZmWNHQFQyWBaPjsNbHs1rnbOMux6Bxm2SXnCmTw2+O8zXiV38sPLBbxAQATgtHgNdL3jTv3FcjmFaBvzA/uVuPESRYyvUCn+hpBGFi9SCXRZdyyteEfDOcBkZYPZkyRnb8wauyVRuzCSlXtEFTYyUHbAdHX9qA9O5xKDcQLeEIEKemGJT4QIZmgv+EyvdTwbAbvTeLXjHyghHJXcM1/CoRMw96k07ThcKnRk/UsTQXqZmlm62nuR6rt2Gd5QPo+37b/r0PGdtDzWo6MEE4EYKKmT4lExWnOQQ5lsHrcixoGegVncf4r6ivjbsATDk+Bm8G5LhZ/dl0O2WPxUtsX4/U/IXIJDJ8cuuJIQITMVZzPG7YC+V+wg5bjmwwZTBb0Q6CRFzUEe8gvTidDZYxz+TEBtdlVsrwWwpaNQeGhRUfF59UinaCT00LFG6obq2brvRJ8/WeF9QEBYasFWr85r9A4BfqgrqJqsVExR554CaA0BpJcvrkKACquzpIlpGffvA+3XaF3jD113av+6n4XAuqfX+V/wXsTt6E=
+
+install:
+
+- ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+- lein pallet add-service aws aws-ec2 "$AWS_ACCESS_KEY" "$AWS_SECRET_KEY"
+
+script:
+  - lein run
+
